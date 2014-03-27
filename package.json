@@ -1,0 +1,42 @@
+{
+  "name": "repeat-string",
+  "description": "Repeat the given string, n times.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/repeat-string",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "http://github.com/jonschlinkert/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/repeat-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/repeat-string/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "docs",
+    "documentation",
+    "generate",
+    "generator",
+    "markdown",
+    "templates",
+    "verb"
+  ],
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "mocha -R test"
+  },
+  "devDependencies": {
+    "verb": "~0.1.20",
+    "chai": "~1.9.1"
+  }
+}
