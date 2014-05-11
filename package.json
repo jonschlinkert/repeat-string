@@ -1,7 +1,7 @@
 {
   "name": "repeat-string",
   "description": "Repeat the given string, n times.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/repeat-string",
   "author": {
     "name": "Jon Schlinkert",
@@ -20,6 +20,7 @@
       "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
     }
   ],
+  "main": "index.js",
   "keywords": [
     "docs",
     "documentation",
