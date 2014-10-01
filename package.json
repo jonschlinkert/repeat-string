@@ -1,7 +1,7 @@
 {
   "name": "repeat-string",
   "description": "Repeat the given string, n times.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/repeat-string",
   "author": {
     "name": "Jon Schlinkert",
@@ -21,15 +21,6 @@
     }
   ],
   "main": "index.js",
-  "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
-  ],
   "engines": {
     "node": ">=0.10"
   },
@@ -38,6 +29,7 @@
   },
   "devDependencies": {
     "chai": "~1.9.1",
-    "verb": "~0.2.6"
+    "should": "^4.0.4",
+    "verb": "^0.2.15"
   }
 }
