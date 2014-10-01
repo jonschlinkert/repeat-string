@@ -1,7 +1,7 @@
 {
   "name": "repeat-string",
   "description": "Repeat the given string, n times.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/repeat-string",
   "author": {
     "name": "Jon Schlinkert",
@@ -31,5 +31,12 @@
     "chai": "~1.9.1",
     "should": "^4.0.4",
     "verb": "^0.2.15"
-  }
+  },
+  "keywords": [
+    "multiple",
+    "repeat",
+    "str",
+    "string",
+    "times"
+  ]
 }
