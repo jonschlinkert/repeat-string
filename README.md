@@ -1,6 +1,6 @@
 # repeat-string [![NPM version](https://badge.fury.io/js/repeat-string.svg)](http://badge.fury.io/js/repeat-string)
 
-> Fastest implementation for repeating a string.
+> Repeat the given string n times. Fastest implementation for repeating a string.
 
 ## Install with [npm](npmjs.org)
 
@@ -15,12 +15,23 @@ bower install repeat-string --save
 
 ## Usage
 
+### [repeat](index.js#L41)
+
+Repeat the given `string` the specified `number` of times.
+
+* `string` **{String}**: The string to repeat    
+* `number` **{Number}**: The number of times to repeat the string    
+* `returns` **{String}**: Repeated string  
+
+**Example:**
+
 ```js
 var repeat = require('repeat-string');
-
 repeat('A', 5);
 //=> AAAAA
 ```
+
+
 
 ## Author
 
