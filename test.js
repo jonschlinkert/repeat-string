@@ -35,6 +35,7 @@ describe('repeat', function () {
     repeat('a', 1).should.equal('a');
     repeat('a', 2).should.equal('aa');
     repeat('a', 10).should.equal('aaaaaaaaaa');
+    repeat('b ', 10).trim().should.equal('b b b b b b b b b b');
     repeat('a ', 10).trim().should.equal('a a a a a a a a a a');
   });
 });
