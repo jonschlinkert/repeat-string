@@ -1,7 +1,7 @@
 {
   "name": "repeat-string",
-  "description": "Fastest implementation for repeating a string.",
-  "version": "1.0.0",
+  "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+  "version": "1.1.0",
   "homepage": "https://github.com/jonschlinkert/repeat-string",
   "author": {
     "name": "Jon Schlinkert",
@@ -29,6 +29,8 @@
     "should": "^4.0.4"
   },
   "keywords": [
+    "fast",
+    "fastest",
     "fill",
     "javascript",
     "js",
