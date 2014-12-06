@@ -1,28 +1,26 @@
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2014-2015 Jon Schlinkert, contributors.
  * Licensed under the MIT License
  */
 
 'use strict';
 
-module.exports = function repeat(str, count) {
+module.exports = function repeat(str, num) {
   if (typeof str !== 'string') {
     throw new TypeError('repeat-string expects a string.');
   }
 
-  if (count < 1) {
-    return '';
-  }
+  var res = '';
 
-  var result = '';
-  while (count > 0) {
-    if (count & 1) {
-      result += str;
+  while (num) {
+    if (num & 1) {
+      res += str;
     }
-    count >>= 1;
+    num >>= 1;
     str += str;
   }
-  return result;
+
+  return res;
 };
