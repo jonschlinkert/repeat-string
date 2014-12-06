@@ -1,13 +1,12 @@
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2014 Jon Schlinkert
  * Licensed under the MIT License
  */
 
 'use strict';
 
-var assert = require('assert');
 var should = require('should');
 var repeat = require('./');
 

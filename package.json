@@ -1,7 +1,7 @@
 {
   "name": "repeat-string",
-  "description": "Repeat the given string, n times.",
-  "version": "0.2.2",
+  "description": "Fastest implementation for repeating a string.",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/repeat-string",
   "author": {
     "name": "Jon Schlinkert",
@@ -14,12 +14,10 @@
   "bugs": {
     "url": "https://github.com/jonschlinkert/repeat-string/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+  },
   "main": "index.js",
   "engines": {
     "node": ">=0.10"
@@ -28,15 +26,28 @@
     "test": "mocha -R spec"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
-    "should": "^4.0.4",
-    "verb": "^0.2.15"
+    "should": "^4.0.4"
   },
   "keywords": [
+    "fill",
+    "javascript",
+    "js",
+    "left",
+    "left-pad",
     "multiple",
+    "node.js",
+    "pad",
+    "padding",
     "repeat",
+    "repeating",
+    "right",
+    "right-pad",
     "str",
     "string",
-    "times"
+    "text",
+    "times",
+    "util",
+    "utility",
+    "utils"
   ]
 }
