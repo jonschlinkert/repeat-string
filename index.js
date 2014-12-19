@@ -46,6 +46,7 @@ function repeat(str, num) {
   cache = cache || str;
   if (cache !== str) {
     res = '';
+    cache = str;
   }
 
   var max = (str.length * num);
