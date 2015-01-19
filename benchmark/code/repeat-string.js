@@ -4,15 +4,12 @@ var res = '';
 var cache;
 
 module.exports = function repeat(str, num) {
-  var len = str.length;
-  var max = len * num;
+  var max = str.length * num;
 
   cache = cache || str;
   if (cache !== str) {
     res = '';
     cache = str;
-  } else if (len > max) {
-    num = 0;
   }
 
   while (num > 0 && max > res.length) {

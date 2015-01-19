@@ -1,7 +1,7 @@
 /*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
- * Copyright (c) 2014-2015 Jon Schlinkert, contributors.
+ * Copyright (c) 2014-2015, Jon Schlinkert.
  * Licensed under the MIT License
  */
 
@@ -12,13 +12,6 @@
  */
 
 module.exports = repeat;
-
-/**
- * Results cache
- */
-
-var res = '';
-var cache;
 
 /**
  * Repeat the given `string` the specified `number`
@@ -43,31 +36,32 @@ function repeat(str, num) {
     throw new TypeError('repeat-string expects a string.');
   }
 
+  var max = str.length * num;
   cache = cache || str;
   if (cache !== str) {
     res = '';
     cache = str;
   }
 
-  var max = (str.length * num);
-  var i = 0;
-
-  if (res.length >= max) {
-    return res.slice(0, max);
-  }
-
-  for (; num > 0; i++) {
+  while (num > 0 && max > res.length) {
     if (num & 1) {
       res += str;
     }
 
-    if (res.length >= max) {
-      return res.slice(0, max);
+    if (max <= res.length) {
+      return res.substr(0, max);
     }
 
     num >>= 1;
     str += str;
   }
 
-  return res.slice(0, max);
+  return res.substr(0, max);
 }
+
+/**
+ * Results cache
+ */
+
+var res = '';
+var cache;
