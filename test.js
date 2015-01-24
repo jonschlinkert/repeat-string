@@ -35,12 +35,6 @@ describe('repeat', function () {
     repeat('a', null).should.equal('');
   });
 
-
-  it('should throw an error when no string is given:', function () {
-    (function() {repeat(10); }).should.throw('repeat-string expects a string.');
-    (function() {repeat(null); }).should.throw('repeat-string expects a string.');
-  });
-
   it('should repeat the given string n times', function () {
     repeat('a', 0).should.equal('');
     repeat('a', 1).should.equal('a');
@@ -57,5 +51,19 @@ describe('repeat', function () {
     repeat('a', '10').should.equal('aaaaaaaaaa');
     repeat('b ', '10').trim().should.equal('b b b b b b b b b b');
     repeat('a ', '10').trim().should.equal('a a a a a a a a a a');
+  });
+
+  it('should cache strings until the string changes:', function () {
+    repeat('a', '5').should.equal('aaaaa');
+    repeat('b ', '5').trim().should.equal('b b b b b');
+    repeat('a ', '5').trim().should.equal('a a a a a');
+    repeat('c ', '5').trim().should.equal('c c c c c');
+    repeat('a ', '5').trim().should.equal('a a a a a');
+    repeat('b ', '5').trim().should.equal('b b b b b');
+  });
+
+  it('should throw an error when no string is given:', function () {
+    (function() {repeat(10); }).should.throw('repeat-string expects a string.');
+    (function() {repeat(null); }).should.throw('repeat-string expects a string.');
   });
 });
