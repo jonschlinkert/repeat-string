@@ -37,19 +37,15 @@ function repeat(str, num) {
   }
 
   var max = str.length * num;
-  cache = cache || str;
-  if (cache !== str) {
-    res = '';
+
+  if (cache !== str || typeof cache === 'undefined') {
     cache = str;
+    res = '';
   }
 
-  while (num > 0 && max > res.length) {
+  while (max > res.length && num > 0) {
     if (num & 1) {
       res += str;
-    }
-
-    if (max <= res.length) {
-      return res.substr(0, max);
     }
 
     num >>= 1;
