@@ -13,8 +13,12 @@ var fixtures = glob.sync(__dirname + '/fixtures/*.js');
 glob.sync(__dirname + '/code/*.js').forEach(function (fp) {
   var fn = require(path.resolve(__dirname, 'code', fp));
   var name = path.basename(fp, path.extname(fp));
+  if (/\.js/.test(fp) && /^rep.*/.test(name)) {
 
-  fixtures.forEach(function (fixture) {
-    console.log(chalk.bold(name) + ':', fn.apply(fn, require(fixture)).length);
-  });
+    fixtures.forEach(function (fixture) {
+      if (/^.*\.js/.test(path.basename(fixture))) {
+        console.log(chalk.bold(name) + ':', fn.apply(fn, require(fixture)).length);
+      }
+    });
+  }
 });

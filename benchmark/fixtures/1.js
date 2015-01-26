@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = ['aas', 1];
+module.exports = ['abc', 1];
