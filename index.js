@@ -36,8 +36,10 @@ function repeat(str, num) {
     throw new TypeError('repeat-string expects a string.');
   }
 
-  var max = str.length * num;
+  if (num === 1) return str;
+  if (num === 2) return str + str;
 
+  var max = str.length * num;
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
@@ -49,6 +51,7 @@ function repeat(str, num) {
     }
 
     num >>= 1;
+    if (!num) break;
     str += str;
   }
 
