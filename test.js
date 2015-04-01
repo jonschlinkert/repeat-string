@@ -2,25 +2,14 @@
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
  * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License
+ * Licensed under the MIT License.
  */
 
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
-var files = fs.readdirSync('./benchmark/code');
-var argv = require('minimist')(process.argv.slice(2));
+/* deps:mocha */
 var should = require('should');
 var repeat = require('./');
-
-var keys = Object.keys(argv);
-if (keys && keys[1]) {
-  var lib = files.filter(function (fp) {
-    return keys[1] === path.basename(fp, path.extname(fp));
-  });
-  repeat = require(path.resolve('./benchmark/code/' + lib[0]));
-}
 
 describe('repeat', function () {
   it('should return an empty string when a number is not given:', function () {
