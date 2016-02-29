@@ -5,7 +5,9 @@
   "repository": "https://github.com/jonschlinkert/repeat-string",
   "license": "MIT",
   "main": "index.js",
-  "scripts": ["index.js"],
+  "scripts": [
+    "index.js"
+  ],
   "keywords": [
     "fast",
     "fastest",
