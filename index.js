@@ -51,18 +51,19 @@ function repeat(str, num) {
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
+  } else if (res.length >= max) {
+    return res.substr(0, max);
   }
 
-  while (max > res.length && num > 0) {
+  while (max > res.length && num > 1) {
     if (num & 1) {
       res += str;
     }
 
     num >>= 1;
-    if (!num) break;
     str += str;
   }
-
-  return res.substr(0, max);
+  res += str;
+  res = res.substr(0, max);
+  return res;
 }
-
