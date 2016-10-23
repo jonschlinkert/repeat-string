@@ -38,46 +38,39 @@ Repeat string is significantly faster than the native method (which is itself fa
 
 ```sh
 # 2x
-repeat-string        █████████████████████████  (28,723,499 ops/sec)
-repeat-string-1.5.4  ████████████████████████   (27,795,679 ops/sec)
-repeating            ████████                   (10,271,694 ops/sec)
-native               ███████████████            (17,823,696 ops/sec)
+repeat-string  █████████████████████████  (26,953,977 ops/sec)
+repeating      █████████                  (9,855,695 ops/sec)
+native         ██████████████████         (19,453,895 ops/sec)
 
 # 3x
-repeat-string        ███████████████████████    (21,416,711 ops/sec)
-repeat-string-1.5.4  █████████████████████████  (22,949,513 ops/sec)
-repeating            █████████                  (8,872,792 ops/sec)
-native               █████████████████          (16,288,558 ops/sec)
+repeat-string  █████████████████████████  (19,445,252 ops/sec)
+repeating      ███████████                (8,661,565 ops/sec)
+native         ████████████████████       (16,020,598 ops/sec)
 
 # 10x
-repeat-string        █████████████████████████  (23,020,921 ops/sec)
-repeat-string-1.5.4  ████████████████████████   (22,129,413 ops/sec)
-repeating            ████████                   (7,833,673 ops/sec)
-native               ████████████████           (14,738,239 ops/sec)
+repeat-string  █████████████████████████  (23,792,521 ops/sec)
+repeating      █████████                  (8,571,332 ops/sec)
+native         ███████████████            (14,582,955 ops/sec)
 
 # 50x
-repeat-string        █████████████████████████  (23,066,376 ops/sec)
-repeat-string-1.5.4  ████████████████████████   (22,891,258 ops/sec)
-repeating            █████                      (5,528,905 ops/sec)
-native               ███████████                (10,527,513 ops/sec)
+repeat-string  █████████████████████████  (23,640,179 ops/sec)
+repeating      █████                      (5,505,509 ops/sec)
+native         ██████████                 (10,085,557 ops/sec)
 
 # 250x
-repeat-string        ███████████████████████    (24,340,705 ops/sec)
-repeat-string-1.5.4  █████████████████████████  (25,614,176 ops/sec)
-repeating            ████                       (4,133,430 ops/sec)
-native               ███████                    (7,888,010 ops/sec)
+repeat-string  █████████████████████████  (23,489,618 ops/sec)
+repeating      ████                       (3,962,937 ops/sec)
+native         ████████                   (7,724,892 ops/sec)
 
 # 2000x
-repeat-string        █████████████████████████  (25,620,269 ops/sec)
-repeat-string-1.5.4  ███████████████████████    (24,511,429 ops/sec)
-repeating            ███                        (3,546,935 ops/sec)
-native               ██████                     (6,673,426 ops/sec)
+repeat-string  █████████████████████████  (20,315,172 ops/sec)
+repeating      ████                       (3,297,079 ops/sec)
+native         ███████                    (6,203,331 ops/sec)
 
 # 20000x
-repeat-string        █████████████████████████  (22,688,021 ops/sec)
-repeat-string-1.5.4  ███████████████████████    (21,569,928 ops/sec)
-repeating            ███                        (2,981,919 ops/sec)
-native               ██████                     (5,509,279 ops/sec)
+repeat-string  █████████████████████████  (23,382,915 ops/sec)
+repeating      ███                        (2,980,058 ops/sec)
+native         █████                      (5,578,808 ops/sec)
 ```
 
 **Run the benchmarks**
