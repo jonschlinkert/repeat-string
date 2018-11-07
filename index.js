@@ -11,6 +11,7 @@
  * Results cache
  */
 
+const isNumber = require('is-number');
 var res = '';
 var cache;
 
@@ -42,10 +43,15 @@ function repeat(str, num) {
   if (typeof str !== 'string') {
     throw new TypeError('expected a string');
   }
+  
+  if (!(isNumber(num) && Number.isInteger(num) && num >= 0)){
+      throw new TypeError('expected a positive integer number');
+  }
 
   // cover common, quick use cases
   if (num === 1) return str;
   if (num === 2) return str + str;
+  if (num === 0) return "";
 
   var max = str.length * num;
   if (cache !== str || typeof cache === 'undefined') {
