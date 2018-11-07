@@ -9,7 +9,8 @@
     "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
     "Linus Unnebäck <linus@folkdatorn.se> (http://linus.unnebäck.se)",
     "Thijs Busser <tbusser@gmail.com> (http://tbusser.net)",
-    "Titus <tituswormer@gmail.com> (wooorm.com)"
+    "Titus <tituswormer@gmail.com> (wooorm.com)",
+    "ggattoni (https://github.com/ggattoni)"
   ],
   "repository": "jonschlinkert/repeat-string",
   "bugs": {
@@ -25,6 +26,9 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies" : {
+    "is-number" : "^6.0.0"
   },
   "devDependencies": {
     "ansi-cyan": "^0.1.1",
