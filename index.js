@@ -44,8 +44,13 @@ function repeat(str, num) {
     throw new TypeError('expected a string');
   }
   
-  if (!(isNumber(num) && Number.isInteger(num) && num >= 0)){
-      throw new TypeError('expected a positive integer number');
+  // cover null or undefined cases
+  if (num === null || num === undefined) {
+    return "";
+  }
+
+  if (!(isNumber(num) && Number.isInteger(typeof num !== 'string' ? num : Number(num)) && num >= 0)) {
+    throw new TypeError('expected a positive integer number ');
   }
 
   // cover common, quick use cases
@@ -54,6 +59,7 @@ function repeat(str, num) {
   if (num === 0) return "";
 
   var max = str.length * num;
+  
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
