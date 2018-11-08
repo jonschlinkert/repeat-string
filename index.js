@@ -11,7 +11,7 @@
  * Results cache
  */
 
-const isNumber = require('is-number');
+var isNumber = require('is-number');
 var res = '';
 var cache;
 
@@ -58,8 +58,7 @@ function repeat(str, num) {
   if (num === 2) return str + str;
   if (num === 0) return "";
 
-  var max = str.length * num;
-  
+  var max = str.length * num;  
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
