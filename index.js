@@ -15,6 +15,8 @@ var isNumber = require('is-number');
 var res = '';
 var cache;
 
+
+
 /**
  * Expose `repeat`
  */
@@ -38,6 +40,19 @@ module.exports = repeat;
  * @return {String} Repeated string
  * @api public
  */
+
+function isInt(input){
+  if(!isNumber(input)){
+    throw new TypeError("input must be a number. Your input was " + typeof input);
+  }else{
+    return (input % 1) === 0;
+  }
+}
+
+//prototype modification to allow node v0.10.0 to have access to the isInteger function.
+if(! Number.isInteger){
+  Number.isInteger = isInt;
+}
 
 function repeat(str, num) {
   if (typeof str !== 'string') {
