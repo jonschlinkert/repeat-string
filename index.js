@@ -11,8 +11,11 @@
  * Results cache
  */
 
+var isNumber = require('is-number');
 var res = '';
 var cache;
+
+
 
 /**
  * Expose `repeat`
@@ -38,16 +41,39 @@ module.exports = repeat;
  * @api public
  */
 
+function isInt(input){
+  if(!isNumber(input)){
+    throw new TypeError("input must be a number. Your input was " + typeof input);
+  }else{
+    return (input % 1) === 0;
+  }
+}
+
+//prototype modification to allow node v0.10.0 to have access to the isInteger function.
+if(! Number.isInteger){
+  Number.isInteger = isInt;
+}
+
 function repeat(str, num) {
   if (typeof str !== 'string') {
     throw new TypeError('expected a string');
+  }
+  
+  // cover null or undefined cases
+  if (num === null || num === undefined) {
+    return "";
+  }
+
+  if (!(isNumber(num) && Number.isInteger(typeof num !== 'string' ? num : Number(num)) && num >= 0)) {
+    throw new TypeError('expected a positive integer number ');
   }
 
   // cover common, quick use cases
   if (num === 1) return str;
   if (num === 2) return str + str;
+  if (num === 0) return "";
 
-  var max = str.length * num;
+  var max = str.length * num;  
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
