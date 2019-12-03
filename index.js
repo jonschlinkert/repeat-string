@@ -44,8 +44,14 @@ function repeat(str, num) {
   }
 
   // cover common, quick use cases
-  if (num === 1) return str;
-  if (num === 2) return str + str;
+  switch (num) {
+    case 0: return '';
+    case 1: return str;
+    case 2: return str + str;
+    case 3: return str + str + str;
+    case 4: return str + str + str + str;
+    case 5: return str + str + str + str + str;
+  }
 
   var max = str.length * num;
   if (cache !== str || typeof cache === 'undefined') {
