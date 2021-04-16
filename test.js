@@ -8,9 +8,9 @@
 'use strict';
 
 require('mocha');
-var assert = require('assert');
+const assert = require('assert');
 const { it } = require('mocha');
-var repeat = require('./');
+const repeat = require('./');
 
 describe('repeat', function() {
   it('should return an empty string when a number is not given:', function() {
