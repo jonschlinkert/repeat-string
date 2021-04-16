@@ -43,11 +43,19 @@ function repeat(str, num) {
     throw new TypeError('expected a string');
   }
 
+  // no need to repeat an empty string
+  if (str === '') return '';
+
   // cover common, quick use cases
   if (num === 1) return str;
   if (num === 2) return str + str;
 
   var max = str.length * num;
+
+  if (max === Infinity) {
+    throw new TypeError('cannot repeat indefinitely');
+  }
+
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';

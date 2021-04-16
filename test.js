@@ -8,8 +8,9 @@
 'use strict';
 
 require('mocha');
-var assert = require('assert');
-var repeat = require('./');
+const assert = require('assert');
+const { it } = require('mocha');
+const repeat = require('./');
 
 describe('repeat', function() {
   it('should return an empty string when a number is not given:', function() {
@@ -21,6 +22,18 @@ describe('repeat', function() {
     assert.equal(repeat('a', 0), '');
     assert.equal(repeat('', null), '');
     assert.equal(repeat('a', null), '');
+  });
+
+  it('shoud not round numbers:', function() {
+    assert.equal(repeat('A', 6.9), repeat('A', 6));
+    assert.equal(repeat('A', '6.9'), repeat('A', 6));
+  });
+
+  it('should return an empty string for negative numbers:', function () {
+    assert.equal(repeat('A', -42), '');
+    assert.equal(repeat('A', '-42'), '');
+    assert.equal(repeat('A', -Infinity), '');
+    assert.equal(repeat('A', '-Infinity'), '');
   });
 
   it('should repeat the given string n times', function() {
@@ -58,5 +71,12 @@ describe('repeat', function() {
   it('should throw an error when no string is given:', function() {
     assert.throws(function() {repeat(10); }, /expected a string/);
     assert.throws(function() {repeat(null); }, /expected a string/);
+  });
+
+  it('should throw an error when attempting to repeat ad infinitum', function () {
+    assert.throws(function () { repeat('foo', Infinity); });
+    assert.throws(function () { repeat('foo', 'Infinity'); });
+    assert.doesNotThrow(function () { repeat('foo', -Infinity); });
+    assert.doesNotThrow(function () { repeat('foo', '-Infinity'); });
   });
 });
