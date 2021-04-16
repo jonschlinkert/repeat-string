@@ -9,6 +9,7 @@
 
 require('mocha');
 var assert = require('assert');
+const { it } = require('mocha');
 var repeat = require('./');
 
 describe('repeat', function() {
@@ -21,6 +22,11 @@ describe('repeat', function() {
     assert.equal(repeat('a', 0), '');
     assert.equal(repeat('', null), '');
     assert.equal(repeat('a', null), '');
+  });
+
+  it('shoud not round numbers:', function() {
+    assert.equal(repeat('A', 6.9), repeat('A', 6));
+    assert.equal(repeat('A', '6.9'), repeat('A', 6));
   });
 
   it('should repeat the given string n times', function() {
