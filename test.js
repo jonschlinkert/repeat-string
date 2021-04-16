@@ -29,6 +29,13 @@ describe('repeat', function() {
     assert.equal(repeat('A', '6.9'), repeat('A', 6));
   });
 
+  it('should return an empty string for negative numbers:', function () {
+    assert.equal(repeat('A', -42), '');
+    assert.equal(repeat('A', '-42'), '');
+    assert.equal(repeat('A', -Infinity), '');
+    assert.equal(repeat('A', '-Infinity'), '');
+  });
+
   it('should repeat the given string n times', function() {
     assert.equal(repeat(' ', 0), '');
     assert.equal(repeat('a', 0), '');
