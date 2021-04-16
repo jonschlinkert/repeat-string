@@ -43,6 +43,9 @@ function repeat(str, num) {
     throw new TypeError('expected a string');
   }
 
+  // no need to repeat an empty string
+  if (str === '') return '';
+
   // cover common, quick use cases
   if (num === 1) return str;
   if (num === 2) return str + str;
