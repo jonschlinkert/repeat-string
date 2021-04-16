@@ -72,4 +72,11 @@ describe('repeat', function() {
     assert.throws(function() {repeat(10); }, /expected a string/);
     assert.throws(function() {repeat(null); }, /expected a string/);
   });
+
+  it('should throw an error when attempting to repeat ad infinitum', function () {
+    assert.throws(function () { repeat('foo', Infinity); });
+    assert.throws(function () { repeat('foo', 'Infinity'); });
+    assert.doesNotThrow(function () { repeat('foo', -Infinity); });
+    assert.doesNotThrow(function () { repeat('foo', '-Infinity'); });
+  });
 });

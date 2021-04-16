@@ -51,6 +51,11 @@ function repeat(str, num) {
   if (num === 2) return str + str;
 
   var max = str.length * num;
+
+  if (max === Infinity) {
+    throw new TypeError('cannot repeat indefinitely');
+  }
+
   if (cache !== str || typeof cache === 'undefined') {
     cache = str;
     res = '';
