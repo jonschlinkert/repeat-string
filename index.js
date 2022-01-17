@@ -1,70 +1,27 @@
-/*!
- * repeat-string <https://github.com/jonschlinkert/repeat-string>
- *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
- */
-
 'use strict';
 
-/**
- * Results cache
- */
-
-var res = '';
-var cache;
-
-/**
- * Expose `repeat`
- */
-
-module.exports = repeat;
-
-/**
- * Repeat the given `string` the specified `number`
- * of times.
- *
- * **Example:**
- *
- * ```js
- * var repeat = require('repeat-string');
- * repeat('A', 5);
- * //=> AAAAA
- * ```
- *
- * @param {String} `string` The string to repeat
- * @param {Number} `number` The number of times to repeat the string
- * @return {String} Repeated string
- * @api public
- */
-
-function repeat(str, num) {
-  if (typeof str !== 'string') {
-    throw new TypeError('expected a string');
+module.exports = (string, count) => {
+  /* make sure we have a string */
+  if (typeof string !== "string") {
+    throw new Error(": argument 'string' needs to be of type String only");
   }
-
-  // cover common, quick use cases
-  if (num === 1) return str;
-  if (num === 2) return str + str;
-
-  var max = str.length * num;
-  if (cache !== str || typeof cache === 'undefined') {
-    cache = str;
-    res = '';
-  } else if (res.length >= max) {
-    return res.substr(0, max);
+  /* the argument count should be an integer only */
+  else if (Number.isNaN(count) || !Number.isInteger(count)) {
+    throw new Error(": argument 'count' needs to be an Integer only");
   }
+  /* argument count should be >= 0 */
+  else if (count < 0) {
+    throw new Error(": argument 'count' needs to be greater than or equal to zero");
+  }
+  else {
+    let resultString = "";
 
-  while (max > res.length && num > 1) {
-    if (num & 1) {
-      res += str;
+    /* iterate */
+    for (let i = 0; i < count; ++i) {
+      resultString += string;
     }
 
-    num >>= 1;
-    str += str;
+    /* return the result string */
+    return resultString;
   }
-
-  res += str;
-  res = res.substr(0, max);
-  return res;
 }
